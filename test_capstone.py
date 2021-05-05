@@ -48,8 +48,7 @@ def test_connected(params):
 	else:
 		print ("Not connected to internet")
 
-MIN_TEST_CASES = 20
-README_CONTENT_CHECK_FOR = ['iterator_class', 'print_certificate', 'mailer_smtp', 'FileIter', 'Privilege']
+README_CONTENT_CHECK_FOR = ['iterator_class', 'iterator_class', 'send_mail', 'send_mail_smtp', 'decorators','certificate_creator','conftest','test_capstone']
 
 
 def test_readme_exists():
@@ -61,7 +60,7 @@ def test_readme_contents():
 	readme_words = readme.read().split()
 	readme.close()
 
-	assert len(readme_words) >= 2, "Make your README  interesting! Add atleast 500 words"
+	assert len(readme_words) >= 500, "Make your README  interesting! Add atleast 500 words"
 
 
 def test_readme_proper_description():
