@@ -18,7 +18,7 @@ parser.add_argument('-sc','--score',type=str, help="Specify the score to be writ
 parser.add_argument('-tot','--total',type=str, default='100', help="Specify the total score to be written on the certificate")
 parser.add_argument('-em', '--email', type=str, help="Specify the email to be sent with the certificate")
 parser.add_argument('-se_em', '--sender_email', type=str, default='chirantan.rude@gmail.com', help="defines the email through which certificates are sent out")
-parser.add_argument('-pa','--password', type=str, help="Defines the password for th emailer's account")
+parser.add_argument('-pa','--passwords', type=str, help="Defines the password for th emailer's account")
 args = parser.parse_args()
 
 
@@ -33,5 +33,5 @@ score = args.score
 total = args.total
 email = args.email
 sender_email = args.sender_email
-
+passwords = args.passwords
 

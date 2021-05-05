@@ -15,7 +15,7 @@ def pytest_addoption(parser):
 	parser.addoption('--total',type=str, action="store",default='100', help="Specify the total score to be written on the certificate")
 	parser.addoption('--email', type=str, action="store",help="Specify the email to be sent with the certificate")
 	parser.addoption('--sender_email', action="store",type=str, default='chirantan.rude@gmail.com', help="defines the email through which certificates are sent out")
-	parser.addoption('--password', type=str, help="Defines the password for th emailer's account")
+	parser.addoption('--passwords', type=str, help="Defines the password for th emailer's account")
 
 @pytest.fixture
 def params(request):
@@ -33,7 +33,7 @@ def params(request):
 	params['total'] = request.config.getoption('--total')
 	params['email'] = request.config.getoption('--email')
 	params['sender_email'] = request.config.getoption('--sender_email')
-	params['password'] = request.config.getoption('--password')
+	params['passwords'] = request.config.getoption('--passwords')
 	if params['name'] is None or params['course_name'] is None or params['score'] is None or params['total'] is None or params['email'] is None or params['sender_email'] is None:
 		pytest.skip()
 	return params
