@@ -166,7 +166,7 @@ Command -
 Pytest Command for multiple - 
 
 ```shell
-pytest -s test_capstone.py --filename /home/cv/workspace2/EpAI2.0_CapStone/file2.csv --sleep 0 --path /home/cv/workspace2/EpAI2.0_CapStone/certificates --certificate_file /home/cv/workspace2/EpAI2.0_CapStone/certificate.jpg --single_mode 1 --name chiru --course_name new1111 --score 80 --total 101 --email some@example.net --sender_email some@gmail. --password some
+pytest -s test_capstone.py --filename /home/cv/workspace2/EpAI2.0_CapStone/file2.csv --sleep 0 --path /home/cv/workspace2/EpAI2.0_CapStone/certificates --certificate_file /home/cv/workspace2/EpAI2.0_CapStone/certificate.jpg --single_mode 1 --name chiru --course_name new1111 --score 80 --total 101 --email some@example.net --sender_email some@gmail.com --password some
 ```
 
 Pytest Command for single mail - 
