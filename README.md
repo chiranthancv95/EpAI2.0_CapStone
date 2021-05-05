@@ -19,7 +19,9 @@ Congratulations! You have cleared the COURSE NAME with SCORE marks out of TOTAL 
 We are excited to share the attached Award of Excellence for your performance!<br>
 
 Regards<br>
+
 These are the things that are expected:<br>
+
 your code is well documented<br>
 your code has at least 50 test cases that test various problems that might be there. Some tests that are expected:<br>
 regex check for emails<br>
@@ -89,15 +91,15 @@ For using this mode, please give a csv file which is in the format of 'name, sco
 
 Command - 
 
-'''shell
+```shell
 python main.py --filename <file-path-for-csv> --sleep <sleep-timer-in-int> --path <path-to-store-certificates> --certificate_file <path-for-certificate-file> --single_mode <bulk-mode-or-single-mode-selector> --sender_email <mailer_address> --password <mailer-password>
-'''
+```
 
 Sample Command -
 
-'''shell
+```shell
 python main.py --filename /home/cv/workspace2/EpAI2.0_CapStone/file2.csv --sleep 0 --path /home/cv/workspace2/EpAI2.0_CapStone/certificates --certificate_file /home/cv/workspace2/EpAI2.0_CapStone/certificate.jpg --single_mode 1
-'''
+```
 
 
 2. Single Mode - 
@@ -105,15 +107,15 @@ Using this mode, the user can send a single mail to the candidate whose informat
 
 Command - 
 
-'''shell
+```shell
 python main.py --filename <file-path-for-csv> --sleep <sleep-timer-in-int> --path <path-to-store-certificates> --certificate_file <path-for-certificate-file> --single_mode <bulk-mode-or-single-mode-selector> --name <string> --course_name <string> --score <int> --total <int> --email <email_address> --sender_email <mailer_address> --password <mailer-password>
-'''
+```
 
 Sample Command -
 
-'''shell 
+```shell 
 python main.py --filename /home/cv/workspace2/EpAI2.0_CapStone/file2.csv --sleep 0 --path /home/cv/workspace2/EpAI2.0_CapStone/certificates --certificate_file /home/cv/workspace2/EpAI2.0_CapStone/certificate.jpg --single_mode 2 --name chiru --course_name new1111 --score 80 --total 101 --email some@example.net --sender_email some@gmail.com --password some
-'''
+```
 
 ## Command-line-arguments 
 
@@ -163,15 +165,15 @@ Command -
 
 Pytest Command for multiple - 
 
-'''shell
+```shell
 pytest -s test_capstone.py --filename /home/cv/workspace2/EpAI2.0_CapStone/file2.csv --sleep 0 --path /home/cv/workspace2/EpAI2.0_CapStone/certificates --certificate_file /home/cv/workspace2/EpAI2.0_CapStone/certificate.jpg --single_mode 1 --name chiru --course_name new1111 --score 80 --total 101 --email some@example.net --sender_email some@gmail. --password some
-'''
+```
 
 Pytest Command for single mail - 
 
-'''shell
+```shell
 pytest -s test_capstone.py --filename /home/cv/workspace2/EpAI2.0_CapStone/file2.csv --sleep 0 --path /home/cv/workspace2/EpAI2.0_CapStone/certificates --certificate_file /home/cv/workspace2/EpAI2.0_CapStone/certificate.jpg --single_mode 2 --name chiru --course_name new1111 --score 80 --total 101 --email some@example.net --sender_email some@gmail.com --password some
-'''
+```
 
 
 ## Module Explanation
