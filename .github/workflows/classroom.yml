@@ -1,0 +1,26 @@
+name: GitHub Classroom Workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.6
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Test with pytest
+        env:
+             password: ${{ secrets.password }}
+        run: pytest -s test_capstone.py --filename file2.csv --sleep 0 --path certificates --certificate_file certificate.jpg --single_mode 2 --name chiru --course_name new1111 --score 80 --total 101 --email some@example.net --sender_email chirantan.rude@gmail.com --password password
