@@ -13,7 +13,7 @@ from utils_package.decorators import timeit,func_name
 from utils_package.iterator_class import FileIter
 from utils_package.send_mail import mailer
 from utils_package.send_mail_smtp import mailer_smtp
-from utils_package.parser_args import filename, path, sleep_timer,name, score, total, email, single_mode
+from utils_package.parser_args import filename, path, sleep_timer,name, score, total, email, single_mode,passwords
 
 
 

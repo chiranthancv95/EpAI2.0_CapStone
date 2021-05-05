@@ -4,7 +4,7 @@ import os
 import img2pdf
 from PIL import Image
 import base64
-from utils_package.parser_args import filename, path, certificate_file, sleep_timer,name, score, total, email, single_mode, course_name, sender_email, password
+from utils_package.parser_args import filename, path, certificate_file, sleep_timer,name, score, total, email, single_mode, course_name, sender_email, passwords
 from utils_package.decorators import *
 
 import smtplib
@@ -101,7 +101,7 @@ def mailer_smtp(info):
 	s.starttls()
 	  
 	# Authentication
-	s.login(fromaddr, password)
+	s.login(fromaddr, passwords)
 	  
 	# Converts the Multipart msg into a string
 	text = msg.as_string()

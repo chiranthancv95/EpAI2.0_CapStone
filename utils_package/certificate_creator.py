@@ -4,7 +4,7 @@ from PIL import Image
 from datetime import datetime
 
 import os
-from utils_package.parser_args import filename, path, certificate_file, sleep_timer,name, score, total, email, single_mode, course_name
+from utils_package.parser_args import filename, path, certificate_file, sleep_timer,name, score, total, email, single_mode, course_name, passwords
 from utils_package.decorators import *
 @timeit
 @func_name
