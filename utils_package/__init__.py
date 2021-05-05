@@ -1,7 +1,7 @@
 from . import decorators
 from . import parser_args
 from . import certificate_creator
-from . import send_mail
+#from . import send_mail
 from . import iterator_class
 from . import send_mail_smtp
 
