@@ -64,19 +64,19 @@ def mailer_smtp(info):
 
 	fromaddr = sender_email
 	toaddr = mailid
-	   
+
 	# instance of MIMEMultipart
 	msg = MIMEMultipart()
-	  
+
 	# storing the senders email address  
 	msg['From'] = fromaddr
-	  
+
 	# storing the receivers email address 
 	msg['To'] = toaddr
-	  
+
 	# storing the subject 
 	msg['Subject'] = "Certificate of Course Completion_new7"
-	  
+
 	# string to store the body of the mail
 	#body = "Body_of_the_mail"
 	body=(f'Dear {name},\nCongratulations! You have cleared the EPAI 2.0 Course with {score} marks out of {total} marks!\n We are excited to share the attached Award of Excellence for your performance!\n Regards')
@@ -84,25 +84,25 @@ def mailer_smtp(info):
 
 	# attach the body with the msg instance
 	msg.attach(MIMEText(body, 'plain'))
-	  
+
 	# open the file to be sent 
 	filename = name+'_certificate.pdf'
 	attachment = open(os.path.join(path, name+'_certificate.pdf'), 'rb')
-	  
+
 	# instance of MIMEBase and named as p
 	p = MIMEBase('application', 'octet-stream')
-	  
+
 	# To change the payload into encoded form
 	p.set_payload((attachment).read())
-	  
+
 	# encode into base64
 	encoders.encode_base64(p)
-	   
+
 	p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-	  
+
 	# attach the instance 'p' to instance 'msg'
 	msg.attach(p)
-	  
+
 	# creates SMTP session
 	s = smtplib.SMTP('smtp.gmail.com', 587)
 	
@@ -110,17 +110,17 @@ def mailer_smtp(info):
 
 	# start TLS for security
 	s.starttls()
-	  
+
 	# Authentication
 	s.login(fromaddr, passwords)
-	  
+
 	# Converts the Multipart msg into a string
 	text = msg.as_string()
 	
 	if check_valid_email(toaddr) == True:
 		# sending the mail
 		s.sendmail(fromaddr, toaddr, text)
-	  
+	
 	# terminating the session
 	s.quit()
 	return content_str
