@@ -168,42 +168,42 @@ def test_internet_connection():
 # However it works properly when tested locally.
 
 
-def test_send_1000_mails(params):
-	count = 0
+# def test_send_1000_mails(params):
+# 	count = 0
 
-	try: 
-		items = FileIter(params['filename'])
-		csv_info= "".join(next(items))
+# 	try: 
+# 		items = FileIter(params['filename'])
+# 		csv_info= "".join(next(items))
 
-		csv_info_list = csv_info.split('\n')
+# 		csv_info_list = csv_info.split('\n')
 
 			
-		csv_info_iterator = iter(csv_info_list)
+# 		csv_info_iterator = iter(csv_info_list)
 		
-		next(csv_info_iterator)
-		cert_map_object = map(print_certificate,csv_info_iterator)
-		list(cert_map_object)
-	except IndexError as error:
-		#runs the sending email part since the IndexError is a known error which occurs during the map call 
-		print(error)
+# 		next(csv_info_iterator)
+# 		cert_map_object = map(print_certificate,csv_info_iterator)
+# 		list(cert_map_object)
+# 	except IndexError as error:
+# 		#runs the sending email part since the IndexError is a known error which occurs during the map call 
+# 		print(error)
 
-	while count != 10:
-		try:
-			mail_items = FileIter(params['filename'])
-			mail_info= "".join(next(mail_items))
+# 	while count != 10:
+# 		try:
+# 			mail_items = FileIter(params['filename'])
+# 			mail_info= "".join(next(mail_items))
 
-			mail_info_list = mail_info.split('\n')
+# 			mail_info_list = mail_info.split('\n')
 
 
-			mail_info_iterator = iter(mail_info_list)
-			l = len(mail_info_list)
-			next(mail_info_iterator)
-			mail_map_object = map(mailer_smtp,mail_info_iterator)
-			list(mail_map_object)
-		except IndexError as error:
-			print(error)
-		count += l
-	print("Sent above 1000 mails for testing purposes")
+# 			mail_info_iterator = iter(mail_info_list)
+# 			l = len(mail_info_list)
+# 			next(mail_info_iterator)
+# 			mail_map_object = map(mailer_smtp,mail_info_iterator)
+# 			list(mail_map_object)
+# 		except IndexError as error:
+# 			print(error)
+# 		count += l
+# 	print("Sent above 1000 mails for testing purposes")
 
 
 def test_import_datetime_module():
