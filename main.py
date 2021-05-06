@@ -1,9 +1,9 @@
 
 '''
-This is the main script for running the app.
-As mentioned in the readme, there are two modes available for the user.
+This is the main script that runs the app.
+As mentioned in the readme, there are two modes available to the user.
 If selected '1', then it enables bulk mailing.
-If selected '2' or any other number, then it enables single mailing option for the user.
+If selected '2' or any other number, then it enables single mailing option to the user.
 '''
 
 

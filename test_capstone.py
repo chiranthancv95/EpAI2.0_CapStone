@@ -535,10 +535,6 @@ def test_upload_speed():
 
 def test_doc_string(params):
 	assert main.__doc__ is not None, "Please include a doc string to the code"
-	assert iterator_class.__doc__ is not None, "Please include a doc string to the code"
-	assert print_certificate.__doc__ is not None, "Please include a doc string to the code"
-	assert FileIter.__doc__ is not None, "Please include a doc string to the code"
-	assert mailer_smtp.__doc__ is not None, "Please include a doc string to the code"
 
 
 
