@@ -1,3 +1,9 @@
+'''
+This script generates the certificates of the candidates in a specific format and stores them.
+'''
+
+
+
 import cv2
 import img2pdf
 from PIL import Image
@@ -6,15 +12,22 @@ from datetime import datetime
 import os
 from utils_package.parser_args import filename, path, certificate_file, sleep_timer,name, score, total, email, single_mode, course_name, passwords
 from utils_package.decorators import *
+
+
 @timeit
 @func_name
 def print_certificate(info_obj):
+    '''
+    This function helps in gathering information from the csv file and aprropriately generating the certificates of the candidates.
+    Then stores it as .jpg file extension and later converted to .pdf file which can then be exported with the mail.
+    '''
     a=info_obj.split(',')
     index,name,score,mail=a[0],a[1],a[2],a[3]
     # converting name to standard capitalized format
-    name = name.title()
-    name="".join(name.split())
+    name_on_certificate = name.title()
+    name="".join(name_on_certificate.split())
     img=cv2.imread(certificate_file)
+
 
     # font
     font = cv2.FONT_HERSHEY_SIMPLEX
@@ -22,7 +35,6 @@ def print_certificate(info_obj):
     # fontScale
     fontScale = 1
 
-    # Blue color in BGR
     color = (0, 0, 0)
 
     # Line thickness of 2 px
@@ -39,7 +51,7 @@ def print_certificate(info_obj):
     image = cv2.putText(img, course_name, course_position, font, 
                        fontScale, color, thickness, cv2.LINE_AA)
     name_position = (400,440)
-    image = cv2.putText(img, name, name_position, font, 
+    image = cv2.putText(img, name_on_certificate, name_position, font, 
                        fontScale, color, thickness, cv2.LINE_AA)
     date_position = (200,525)
     image = cv2.putText(img, date_str, date_position, font, 
@@ -48,8 +60,6 @@ def print_certificate(info_obj):
     image = cv2.putText(img, 'Rohan Shravan', signature_position, font, 
                        0.7, color, thickness, cv2.LINE_AA)
     
-    # path 
-    #path = '/home/cv/workspace2/EpAI2.0_CapStone/certificates'
         
     # Create the directory only if it does not exist already
     try: 

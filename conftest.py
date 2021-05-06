@@ -1,9 +1,13 @@
-# test/conftest.py
+'''
+This is the default script for pytest module to enable the arguments passing to the testing script which test_capstone.py script.
+'''
+
 import pytest
 
 def pytest_addoption(parser):
-	# parser.addoption("--username", action="store", help="input useranme")
-	# parser.addoption("--password", action="store", help="input password")
+	'''
+	Defines the alternate to parser.add_arguments of parser_args to set the arguments taken from user
+	'''
 	parser.addoption('--filename', action="store",type=str, default='/home/cv/workspace2/EpAI2.0_CapStone/file2.csv', help="defines the csv file to be processed")
 	parser.addoption('--sleep', action="store",type=str, default='1', help="defines the gap between mails sent, default is set to 30secs")
 	parser.addoption('--path', action="store",type=str, default='/home/cv/workspace2/EpAI2.0_CapStone/certificates', help="defines the path where the certificates are to be stored")
@@ -19,9 +23,10 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def params(request):
+	'''
+	Defines all the arguments taken to respective attributes of params dictionary.
+	'''
 	params = {}
-	# params['username'] = request.config.getoption('--username')
-	# params['password'] = request.config.getoption('--password')
 	params['filename'] = request.config.getoption('--filename')
 	params['sleep'] = request.config.getoption('--sleep')
 	params['path'] = request.config.getoption('--path')

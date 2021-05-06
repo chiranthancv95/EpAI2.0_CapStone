@@ -23,4 +23,4 @@ jobs:
       - name: Test with pytest
         env:
              password: ${{ secrets.password }}
-        run: pytest -s test_capstone.py --filename file2.csv --sleep 0 --path certificates --certificate_file certificate.jpg --single_mode 2 --name chiru --course_name new1111 --score 80 --total 101 --email some@example.net --sender_email chirantan.rude@gmail.com --passwords "$password"
+        run: pytest -s test_capstone.py --filename file2.csv --sleep 1 --path certificates --certificate_file certificate.jpg --single_mode 2 --name chiru --course_name new1111 --score 80 --total 101 --email some@example.net --sender_email chirantan.rude@gmail.com --passwords "$password"

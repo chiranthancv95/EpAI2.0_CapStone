@@ -1,9 +1,17 @@
+'''
+This script contains all the decorators used in other programs.
+'''
+
+
 import time
 import urllib.request
 from functools import wraps
 from datetime import datetime, timezone
 
 def timeit(f):
+	'''
+	This decorator prints the time that the code too execute a certain task.
+	'''
 
 	def timed(*args, **kw):
 
@@ -18,6 +26,9 @@ def timeit(f):
 	return timed
 
 def func_name(f):
+	'''
+	This decorator prints out the function name and other parameters
+	'''
 	
 	def func_n(*args, **kw):
 		result = f(*args, **kw)
@@ -28,6 +39,9 @@ def func_name(f):
 
 
 def logged(fn):
+	'''
+	This is a logger decorator which logs all the function parameters with time duration.
+	'''
 
 	
 	@wraps(fn)
@@ -42,6 +56,9 @@ def logged(fn):
 
 
 def is_connected(fn):
+	'''
+	This decorator checkcs whether the internet connection is present or not.
+	'''
 
 	@wraps(fn)
 	def connected(*args, **kwargs):
@@ -56,6 +73,9 @@ def is_connected(fn):
 
 
 def authenticatedOrNot(auth):
+	'''
+	This decorator ensures that the function or user is authenticated to run the program.
+	'''
 	def dec(fn):
 		def inner(*args, **kwargs):
 			return fn(*args, **kwargs)

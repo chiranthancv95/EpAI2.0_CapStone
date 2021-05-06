@@ -1,4 +1,6 @@
-
+'''
+This code is to send mails using smtplib library.
+'''
 import os
 
 import img2pdf
@@ -17,6 +19,9 @@ import time
 
 
 def check_valid_email(email):
+	'''
+	This method checks for the valid email address and raises an error if not.
+	'''
 	try:
 		# Validate.
 		valid = validate_email(email)
@@ -37,6 +42,10 @@ def check_valid_email(email):
 @logged
 #@authenticatedOrNot
 def mailer_smtp(info):
+	'''
+	This method is the main method for sending mails to the candidates to whom the user needs to send emails with the attached certitficates.
+	'''
+
 	#Waiting to send mail
 	print(f"Waiting for {sleep_timer} seconds to send next mail")
 	time.sleep(int(sleep_timer))

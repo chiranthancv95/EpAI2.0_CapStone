@@ -23,13 +23,8 @@ import speedtest
 import utils_package
 from utils_package import iterator_class
 from utils_package.certificate_creator import print_certificate
-# from utils_package.decorators import timeit,func_name
 from utils_package.iterator_class import FileIter
-# from utils_package.send_mail import mailer
 from utils_package.send_mail_smtp import mailer_smtp
-
-# from utils_package.parser_args import filename, path, sleep_timer, certificate_folder
-
 
 
 import time
@@ -167,6 +162,10 @@ def test_internet_connection():
 		print("Connected to internet")
 	else:
 		print("Not connected to internet")
+
+# This test has been commented since I'm getting the error:smtplib.SMTPSenderRefused, since gmail allows sending only upto 100 mails at a time.
+# Link - https://support.google.com/a/answer/166852?hl=en
+# However it works properly when tested locally.
 
 
 def test_send_1000_mails(params):
@@ -416,16 +415,7 @@ def test_img_saving_working(params):
 	try: 
 		shutil.rmtree(params['path'])
 	except OSError as e:
-		print ("Error: %s - %s." % (e.filename, e.strerror)) 
-		#print("File path can not be removed") 
-
-# def test_content_format():
-# 	info_obj = str('index')+','+ str('name') + ','+ str('score') +' ,'+ str('email')+','+str('total')
-# 	date_str=print_certificate(info_obj)
-# 	content_str = mailer_smtp(info_obj)
-# 	print(date_str, content_str)
-# 	assert len(content_str.split('\n')) == 3, "Content is not having proper format"
-
+		print ("Error: %s - %s." % (e.filename, e.strerror))
 
 
 def test_import_external_packages():
@@ -545,10 +535,10 @@ def test_upload_speed():
 
 def test_doc_string(params):
 	assert main.__doc__ is not None, "Please include a doc string to the code"
-	# assert iterator_class.__doc__ is not None, "Please include a doc string to the code"
-	# assert print_certificate.__doc__ is not None, "Please include a doc string to the code"
-	# assert FileIter.__doc__ is not None, "Please include a doc string to the code"
-	# assert mailer_smtp.__doc__ is not None, "Please include a doc string to the code"
+	assert iterator_class.__doc__ is not None, "Please include a doc string to the code"
+	assert print_certificate.__doc__ is not None, "Please include a doc string to the code"
+	assert FileIter.__doc__ is not None, "Please include a doc string to the code"
+	assert mailer_smtp.__doc__ is not None, "Please include a doc string to the code"
 
 
 
